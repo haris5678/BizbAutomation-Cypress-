@@ -91,7 +91,8 @@ class UploadProduct{
         this.elements.Category_dropdown().click()
         this.elements.Wait_1000()
         this.elements.First_option_Category().click()
-        this.elements.Slider_third_option().click()                
+        this.elements.Slider_third_option().click() 
+        this.elements.Wait_1000()               
 
     }
 
