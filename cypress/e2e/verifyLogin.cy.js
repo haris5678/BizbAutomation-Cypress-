@@ -1,5 +1,7 @@
+import 'cypress-file-upload';
 import SellerloginPage from "../fixtures/SellerloginPage";
-import UploadProduct from "../fixtures/UploadProduct";
+// import UploadProduct from "../fixtures/UploadProduct";
+import UploadProduct from '../fixtures/UploadProduct';
 
 
 //Seller Log in page
@@ -71,10 +73,18 @@ import UploadProduct from "../fixtures/UploadProduct";
 //********************************************************* */
 
 describe('Upload Product', () => {
-    it.only('Valid Product Upload', () => {
+    it('Valid Product Upload', () => {
         
         SellerloginPage.Valid_Login()
         UploadProduct.Valid_Product_Upload()    
+        
+    });
+
+    it.only('Minimum Valid Data', () => {
+        
+        SellerloginPage.Valid_Login()
+        UploadProduct.Minimum_Valid_Data()
+        
         
     });
     
