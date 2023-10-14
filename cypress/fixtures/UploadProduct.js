@@ -1,9 +1,6 @@
-import 'cypress-file-upload';
+
 class UploadProduct{
     elements={
-        
-
-        
 
         Navigate_to_product:() => cy.get('.MuiPaper-root > .MuiList-root > :nth-child(1) > .MuiListItemText-root > .MuiTypography-root').contains('Products'),
         Navigate_to_UploadProduct:() => cy.get('[href="/dashboard/uploadproductdetail"] > .MuiButtonBase-root').contains('Upload Product'),
@@ -13,7 +10,8 @@ class UploadProduct{
         Wait_1000:() => cy.wait(1000),
         Wait_4000:() => cy.wait(4000),
         First_option_Category:() => cy.get('#menu- > .MuiPaper-root > .MuiList-root > [tabindex="0"]'),
-        Slider:() => cy.get('[aria-hidden="true"][data-index="1"]'),
+        Slider_first_option:() => cy.get('[aria-hidden="true"][data-index="1"]'),
+        Slider_third_option:() => cy.get('[aria-hidden="true"][data-index="3"]'),
         Fabric_dropdown:() => cy.get('.css-1sbba4m > .MuiInputBase-root > #demo-simple-select'),
         First_option_Fabric:() => cy.get('#menu- > .MuiPaper-root > .MuiList-root > [tabindex="0"]'),
         Orignal_price:() => cy.get('.MuiFormControl-fullWidth > :nth-child(11)'),
@@ -84,11 +82,18 @@ class UploadProduct{
         this.elements.Terms_condition().click()
         this.elements.Submit_button().click()
 
+    }
 
-
-        
-
+    Minimum_Valid_Data(){
+        this.elements.Navigate_to_product().click()
+        this.elements.Navigate_to_UploadProduct().click()
+        this.elements.ProductName().type('Example Product02')
+        this.elements.Category_dropdown().click()
+        this.elements.Wait_1000()
+        this.elements.First_option_Category().click()
+        this.elements.Slider_third_option().click()                
 
     }
+
 }
 module.exports = new UploadProduct();
