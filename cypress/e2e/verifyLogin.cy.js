@@ -1,6 +1,5 @@
 import 'cypress-file-upload';
 import SellerloginPage from "../fixtures/SellerloginPage";
-// import UploadProduct from "../fixtures/UploadProduct";
 import UploadProduct from '../fixtures/UploadProduct';
 
 
@@ -84,6 +83,14 @@ describe('Upload Product', () => {
         
         SellerloginPage.Valid_Login()
         UploadProduct.Minimum_Valid_Data()
+        
+        
+    });
+
+    it('Maximum Image Size', () => {
+        
+        SellerloginPage.Valid_Login()
+        UploadProduct.Maximum_Image_Size()
         
         
     });
